@@ -1,11 +1,11 @@
 //! It includes some common functionalities, helper functions,
 //! that help simplify the development process and provide shared functionalities.
-
-extern crate image;
-use crate::{
-    AnnoOffset, AudioMetaData, ImageMetaData, MDAHeader , MDAIndex, TextMetaData,
+use crate::entity::{
+    AnnoOffset, AudioMetaData, ImageMetaData, 
+    MDAHeader , MDAIndex, TextMetaData,
     VideoMetaData,
 };
+extern crate image;
 use anyhow::Context;
 use chrono::Local;
 use encoding::{DecoderTrap, Encoding};

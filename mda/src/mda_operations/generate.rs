@@ -1,12 +1,27 @@
-use crate::read_from_file::{get_train_path_and_anno_content, AnnoInfo};
-use crate::read_from_folders::{combine_files, get_files_in_folder};
+use crate::map::read_from_file::{get_train_path_and_anno_content, AnnoInfo};
+use crate::map::read_from_folders::{combine_files, get_files_in_folder};
 use crate::run_mda::MDAOptions;
-use crate::{
-    extract_audio_metadata, extract_filename_change_extension, extract_image_metadata,
-    extract_text_metadata, extract_video_info, get_anno_config, get_file_type, message, AnnoOffset,
-    AudioMetaData, DataType, ImageMetaData, MDAHeader, MDAIndex, RevAnno,
-    TextMetaData, TrainData, TrainingData, VideoMetaData,
+// use crate::{
+//     extract_audio_metadata, extract_filename_change_extension, extract_image_metadata,
+//     extract_text_metadata, extract_video_info, get_anno_config, get_file_type, message, AnnoOffset,
+//     AudioMetaData, DataType, ImageMetaData, MDAHeader, MDAIndex, RevAnno,
+//     TextMetaData, TrainData, TrainingData, VideoMetaData,
+// };
+use crate::utils::{extract_audio_metadata, 
+    extract_filename_change_extension,
+    extract_image_metadata,
+    extract_text_metadata,
+    extract_video_info,
+    get_anno_config,get_file_type,
+    message
 };
+use crate::rev_anno::RevAnno;
+use crate::entity::{ 
+         AudioMetaData, DataType, ImageMetaData, 
+         MDAHeader, MDAIndex, TextMetaData, 
+         TrainData, TrainingData, VideoMetaData,
+         AnnoOffset
+        };
 use anyhow::Result;
 use bincode::serialize_into;
 use indicatif::ProgressBar;

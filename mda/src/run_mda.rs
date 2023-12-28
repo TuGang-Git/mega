@@ -1,19 +1,28 @@
 use anyhow::Result;
 use prettytable::{Cell, Row, Table};
-
-use crate::extract::{
-    extract_mda, extract_mda_more, read_anno_from_mda, read_anno_groups_from_mda,
+use crate::utils::{
+    is_directory, record_end_time, record_start_time,
+    find_mda_files_in_dir, print_table_header, 
+    print_table_cell, message, is_file
 };
-use crate::generate::{
-    generate_mda_combined_annotations, generate_mda_separate_annotation_one_to_one,
+
+use crate::mda_operations::extract::{
+    extract_mda, extract_mda_more, 
+    read_anno_from_mda, read_anno_groups_from_mda,
+    read_info_from_mda
+};
+use crate::mda_operations::generate::{
+    generate_mda_combined_annotations, 
+    generate_mda_separate_annotation_one_to_one,
     generate_mda_separate_annotation_one_to_one_in_folder,
     generate_mda_separate_annotations_one_to_many,
     generate_mda_separate_annotations_one_to_many_in_folder,
 };
-use crate::read_from_folders::*;
-use crate::update::update_anno_in_combined_file;
-use crate::*;
-use crate::{extract::read_info_from_mda, update::update_anno_in_mda};
+use crate::map::read_from_folders::*;
+use crate::mda_operations::update::{
+    update_anno_in_combined_file,update_anno_in_mda};
+// use crate::*; keep commented!
+//use crate::{extract::read_info_from_mda, update::update_anno_in_mda};
 use clap::Parser;
 use indicatif::ProgressBar;
 use rayon::prelude::*;

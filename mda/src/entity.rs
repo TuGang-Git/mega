@@ -84,3 +84,23 @@ pub struct VideoMetaData {
     pub duration: f64,
     pub resolution: (u16, u16),
 }
+
+// AIBOM Properties 
+pub struct AIBOM{
+    pub name: String,// Dataset name
+    pub location: String,// Dataset official website
+    pub license_location: String,// License address link
+    pub content_type: String,// Dataset content type (this can be set as ENUM)
+    pub size: u32,//Total size of the dataset,
+    pub intended_use: String,//Official purpose of use of the dataset
+    pub checksum: Vec<u8>,//checksum
+    pub have_known_biases: bool,//whether there are any biases (What's bias for?)
+    pub originator: Vec<String>,//list of contributors, separated by ',' and ' '
+    pub data_collection_process: String,//as the name tells
+    pub concluded_license: String,//License certified in SPDX License List
+    pub declared_license: String,//Customize the content of the license (such as Chinese and English keywords such as license, term of use, citation and reference, etc.)
+    pub is_sensitive_personal_information: bool,//whether there is personal privacy information
+    pub rejection_notes: String,//if this dataset review is rejected, show the reason
+    pub have_offensive_content:bool,//Whether there is offensive content
+    pub topics: String//the field the dataset locates
+}

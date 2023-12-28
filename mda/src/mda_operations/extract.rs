@@ -1,9 +1,14 @@
-use crate::generate::RevAnnoWithID;
-use crate::{
-    extract_file_name, find_nearest_multiple_of_snapshot_base, get_full_data, message,
-    print_rev_anno_headers, save_audio_to_file, save_image_to_file, save_text_to_file,
-    save_video_to_file, write_strings_to_file, DataType, MDAHeader , MDAIndex,
-    RevAnno, RevAnnoEntry, RevAnnoHeader,
+use crate::mda_operations::generate::RevAnnoWithID;
+use crate::utils::{
+    extract_file_name, save_audio_to_file, save_image_to_file, save_text_to_file,
+    save_video_to_file, write_strings_to_file,message
+};//1
+use crate::rev_anno::{
+    find_nearest_multiple_of_snapshot_base, get_full_data, 
+    print_rev_anno_headers, RevAnno, RevAnnoEntry, RevAnnoHeader,
+};
+use crate::entity::{
+    DataType, MDAHeader , MDAIndex
 };
 use anyhow::Result;
 use rayon::iter::IntoParallelRefIterator;
@@ -14,7 +19,6 @@ use std::fs::File;
 use std::io::{BufReader, Read, Seek, SeekFrom};
 use std::process;
 use indicatif::ProgressBar;
-
 /// Read data from an MDA file.
 pub fn read_info_from_mda(file_path: &str) -> Result<(MDAIndex, MDAHeader), Box<dyn Error>> {
     let file = File::open(file_path)?;

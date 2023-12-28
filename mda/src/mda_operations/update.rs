@@ -1,11 +1,14 @@
-use crate::extract:: get_all_rev_anno_with_id  ;
-use crate::{extract_file_name, MDAIndex};
-use crate::generate::{
+use crate::mda_operations::extract:: get_all_rev_anno_with_id  ;
+//use crate::{extract_file_name, MDAIndex};
+use crate::utils::extract_file_name;
+use crate::entity::MDAIndex;//1
+use crate::mda_operations::generate::{
     write_mda_data, AnnoItem, Annotation, RevAnnoWithID, TrainMapAnno,
 };
-use crate::read_from_file::get_train_path_and_anno_content;
- 
-use crate::{  DataType, MDAHeader,   RevAnno, TrainingData};
+use crate::map::read_from_file::get_train_path_and_anno_content;
+use crate::entity::{DataType, MDAHeader, TrainingData}; 
+use crate::rev_anno::RevAnno;
+// use crate::{  DataType, MDAHeader,   RevAnno, TrainingData};
 use anyhow::Result;
 use indicatif::ProgressBar;
 use std::error::Error;

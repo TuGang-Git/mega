@@ -10,22 +10,22 @@ title = "anno config"
 
 [[annotation]]
 id = "identify"
-path = "test/anno/identity_CelebA.txt"
+path = "D:/BaiduNetdiskDownload/15_Ce.leb.Faces Att.ribu.tes Da.ta.set (CelebA)/Anno/identity_CelebA.txt"
 start = 1
 end=1001
 
 [[annotation]]
-path = "test/anno/list_attr_celeba.txt"
+path = "D:/BaiduNetdiskDownload/15_Ce.leb.Faces Att.ribu.tes Da.ta.set (CelebA)/Anno/list_attr_celeba.txt"
 start = 3
 end=1002
 
 [[annotation]]
-path = "test/anno/list_bbox_celeba.txt"
+path = "D:/BaiduNetdiskDownload/15_Ce.leb.Faces Att.ribu.tes Da.ta.set (CelebA)/Anno/list_bbox_celeba.txt"
 start = 3
 end=1002
 
 [[annotation]]
 id = "landmarks"
-path = "test/anno/list_landmarks_celeba.txt"
+path = "D:/BaiduNetdiskDownload/15_Ce.leb.Faces Att.ribu.tes Da.ta.set (CelebA)/Anno/list_landmarks_celeba.txt"
 start=3
 end=1002
